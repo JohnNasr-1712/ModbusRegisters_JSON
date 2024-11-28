@@ -1,0 +1,102 @@
+{
+	"ModbusRTU": {
+		"PV_Inverter": {
+			"CommunicationData": {
+				"SlaveID": 1,
+				"DataFormat": "SERIAL_8N1",
+				"BaudRate": 9600
+			},
+			"StatusMonitoring": [
+				{
+					"Name": "RunningFrequency",
+					"Address": 3000,
+					"ScaleFactor": 100
+				},
+				{
+					"Name": "SetFrequency",
+					"Address": 3001,
+					"ScaleFactor": 100
+				},
+				{
+					"Name": "OutputVoltage",
+					"Address": 3002,
+					"ScaleFactor": 1
+				},
+				{
+					"Name": "OutputCurrent",
+					"Address": 3003,
+					"ScaleFactor": 10
+				},
+				{
+					"Name": "OutputPower",
+					"Address": 3004,
+					"ScaleFactor": 10
+				},
+				{
+					"Name": "BusVoltage",
+					"Address": 3006,
+					"ScaleFactor": 1
+				},
+				{
+					"Name": "InverterTemperature",
+					"Address": 3017,
+					"ScaleFactor": 1
+				},
+				{
+					"Name": "PowerConsumption",
+					"Address": 3023,
+					"ScaleFactor": 1
+				}
+			],
+			"FaultRecord": [
+				{
+					"Name": "LatestFaultCode",
+					"Address": 3100,
+					"ScaleFactor": 1
+				}
+			],
+			"ControlCommand": {
+				"ControlCommandAddress": 2000,
+				"Commands": [
+					{
+						"Name": "ForwardRun",
+						"Value": 1
+					},
+					{
+						"Name": "ReverseRun",
+						"Value": 2
+					},
+					{
+						"Name": "Stop",
+						"Value": 5
+					}
+				]
+			},
+			"Parameters": [
+				{
+					"Name": "Disply_Editable",
+					"Address": 8001,
+					"editable": 0,
+					"displayOnly": 1
+
+				},
+				{
+					"Name": "EditingMode",
+					"Address": 8006,
+					"ViaKeybadAndRS485": 0,
+					"ViaRS485": 2
+				},
+				{
+					"Name": "Protection",
+					"Address": 8002,
+					"Deactivate": 0,
+					"Activate": 1
+				}
+			]
+		},
+		"Battery_Inverter": {}
+	},
+	"ModbusTCP": {
+		"EnergyMeter": {}
+	}
+}
